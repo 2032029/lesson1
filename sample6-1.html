@@ -63,10 +63,20 @@
         plane.position.set(0,0,0);
  //       scene.add(plane);
 
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load("stone.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        var bump = textureLoader.load("stone-bump.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;
+
         // 箱を作成
         var geometry = new THREE.BoxGeometry(1, 1, 1);
         var material = new THREE.MeshStandardMaterial({ color: 0x0000ff,roughness: 0.0 });
-        var box = new THREE.Mesh(geometry, material);
+        var box = new THREE.Mesh(geometry, mat);
+        //var box = new THREE.Mesh(geometry, material);
         box.castShadow = true;
         box.receiveShadow = true;
         box.position.set(0,0,0); //位置を指定
@@ -128,8 +138,5 @@
         }
       }
     </script>
-  <br>
-  <a href="./index.html">戻る</a>
-  <br>
 </body>
 </html>
