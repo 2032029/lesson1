@@ -82,9 +82,14 @@
         box.position.set(0,0,0); //位置を指定
 //        scene.add(box);   // シーンに追加
 
+        var ttexture = textureLoader.load("wood.jpg");
+        var tmat = new THREE.MeshPhongMaterial();
+        tmat.map = ttexture;
+
         var tgeometry = new THREE.TorusGeometry( 0.9, 0.1, 10, 100 );
         var tmaterial = new THREE.MeshStandardMaterial( { color: 0xFF0000, roughness: 0.0 } );
-        var torus = new THREE.Mesh( tgeometry, tmaterial );
+        //var torus = new THREE.Mesh( tgeometry, tmaterial );
+        var torus = new THREE.Mesh( tgeometry, tmat );
         torus.castShadow = true;
         torus.receiveShadow = true;
         torus.position.set(0,0,0);
@@ -92,7 +97,8 @@
 
         var tgeometry2 = new THREE.TorusGeometry( 1, 0.1, 10, 100 );
         var tmaterial2 = new THREE.MeshStandardMaterial( { color: 0x00ff00,roughness: 0.0 } );
-        var torus2 = new THREE.Mesh( tgeometry2, tmaterial2 );
+        //var torus2 = new THREE.Mesh( tgeometry2, tmaterial2 );
+        var torus = new THREE.Mesh( tgeometry2, tmat );
         torus2.castShadow = true;
         torus2.receiveShadow = true;
         torus2.position.set(0,0,0);
