@@ -105,13 +105,14 @@
         const spmat1 = new THREE.SpriteMaterial({map:text1,});
 
         const sprite1 = new THREE.Sprite(spmat1);
-        sprite1.scale.set(2, 0.5, 1);
-        sprite1.position.set(0, 5, 0);
-        scene.add(sprite1);
+        sprite1.scale.set(3, 1, 1);
+        sprite1.position.set(0, 3.5, 0);
+        //scene.add(sprite1);
         
         const ichigoukan = new THREE.Group();
         ichigoukan.add(box1);
         ichigoukan.add(box2);
+        ichigoukan.add(sprite1);
         ichigoukan.position.set(0,0,0);
         scene.add(ichigoukan);
 
@@ -197,7 +198,7 @@
         //  x+=0.03;
         //  test.position.y = Math.sin(x) / 2 + 1.7;
 
-       // box1.rotation.y += 0.005;
+          ichigoukan.rotation.y += 0.005;
 
         }
       }
