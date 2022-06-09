@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+  </head>
+<body>
+ <script>
+      // ページの読み込みを待つ
+      window.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        // サイズを指定
+        const width = 800
+        const height = 600;
+
+        // レンダラーを作成
+        var renderer = new THREE.WebGLRenderer();
+        document.body.appendChild(renderer.domElement);
+        renderer.setSize(width, height);
+        renderer.shadowMap.enabled = true;
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(7, 3, -3);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera, document.body); 
+        
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(10, 10, 10);
+        directionalLight1.castShadow = true;
+        // シーンに追加
+ //       scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0x888888);
+        directionalLight2.position.set(-10, -10, 10);
+        directionalLight2.castShadow = true;
+        // シーンに追加
+//        scene.add(directionalLight2);
+
+        var light = new THREE.SpotLight(0xffffff, 2, 100, Math.PI / 20, 0.1, 0.5);
+        light.position.set(0,10, 15);
+        light.castShadow = true;
+        scene.add(light);
+
+        // helper
+        const gridHelper = new THREE.GridHelper(2,10); // size, step
+        scene.add(gridHelper);
+        const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
+        scene.add(axisHelper);
+
+        var planeGeometry = new THREE.PlaneGeometry(10,10,10,10); //縦、横、分割数、分割数
+        var planeMaterial = new THREE.MeshStandardMaterial({color: 0x808080,roughness: 0.0});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.receiveShadow = true;
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,0,0);
+        scene.add(plane);
+
+        var textureLoader = new THREE.TextureLoader();
+        var side1 = textureLoader.load("texture/side1-all.png");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = side1;
+        var bgeometry = new THREE.BoxGeometry(1, 3, 1);
+        var box1 = new THREE.Mesh(bgeometry, mat1);
+        box1.castShadow = true;
+        box1.receiveShadow = true;
+        box1.position.set(0,1.5,0);
+        scene.add(box1);
+
+
+
+
+/*        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load("stone.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        var bump = textureLoader.load("stone-bump.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;*/
+
+        // 箱を作成
+/*       var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var material = new THREE.MeshStandardMaterial({ color: 0x0000ff,roughness: 0.0 });
+        var box = new THREE.Mesh(geometry, mat);
+        //var box = new THREE.Mesh(geometry, material);
+        box.castShadow = true;
+        box.receiveShadow = true;
+        box.position.set(0,0,0); //位置を指定
+//        scene.add(box);   // シーンに追加
+
+        var ttextureLoader = new THREE.TextureLoader();
+        var ttexture = ttextureLoader.load("wood.jpg");
+        var tmat = new THREE.MeshPhongMaterial();
+        tmat.map = ttexture;
+
+        var tgeometry = new THREE.TorusGeometry( 0.9, 0.1, 10, 100 );
+        var tmaterial = new THREE.MeshStandardMaterial( { color: 0xFF0000, roughness: 0.0 } );
+        //var torus = new THREE.Mesh( tgeometry, tmaterial );
+        var torus = new THREE.Mesh( tgeometry, tmat );
+        torus.castShadow = true;
+        torus.receiveShadow = true;
+        torus.position.set(0,0,0);
+//        scene.add( torus );
+
+        var tgeometry2 = new THREE.TorusGeometry( 1, 0.1, 10, 100 );
+        var tmaterial2 = new THREE.MeshStandardMaterial( { color: 0x00ff00,roughness: 0.0 } );
+        //var torus2 = new THREE.Mesh( tgeometry2, tmaterial2 );
+        var torus2 = new THREE.Mesh( tgeometry2, tmat );
+        torus2.castShadow = true;
+        torus2.receiveShadow = true;
+        torus2.position.set(0,0,0);
+ //       scene.add( torus2 );
+
+        const test = new THREE.Group();
+        test.add(box);
+        test.add(torus);
+        test.add(torus2);
+        test.position.set(0,1.2,1);
+ //       scene.add(test);
+
+        const all = new THREE.Group();
+        all.add(plane);
+        all.add(test);
+        all.position.set(0,0,0);
+        scene.add(all);
+
+*/
+
+        update();
+
+        // 毎フレーム時に実行されるループイベントです
+
+        var x = 0;
+
+        function update() {
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(update);
+
+           // 箱を回転させる
+        //  box.rotation.x += 0.01;
+       //   box.rotation.y += 0.01;
+
+        //  torus.rotation.x += 0.01;
+
+        //  test.rotation.y += 0.005;
+
+        //  x+=0.03;
+        //  test.position.y = Math.sin(x) / 2 + 1.7;
+
+        }
+      }
+    </script>
+  <a href="./index.html">戻る</a>
+  <br>
+</body>
+</html>
