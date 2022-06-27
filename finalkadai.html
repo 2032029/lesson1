@@ -64,6 +64,19 @@
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,0,0);
         scene.add(plane);
+        
+        var ptextureloader = new TextureLoader();
+        var ptexture = ptextureloader.load("koudaimap.png");
+        var pmat = new MeshPhongMaterial();
+        pmat.map = ptexture;
+
+        var planeGeometry2 = new THREE.PlaneGeometry(7,6,10,10); //縦、横、分割数、分割数
+       // var planeMaterial2 = new THREE.MeshStandardMaterial({color: 0x606060,roughness: 1});
+        var plane2 = new THREE.Mesh(planeGeometry2,pmat);
+        plane2.receiveShadow = true;
+        plane2.rotation.set( -Math.PI/2, 0, 0 );
+        plane2.position.set(0,0.01,0);
+        scene.add(plane2);
 
 //        var textureLoader = new THREE.TextureLoader();
 //        var side1 = textureLoader.load("texture/side1-all.png");
