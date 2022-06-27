@@ -65,9 +65,9 @@
         plane.position.set(0,0,0);
         scene.add(plane);
         
-        var ptextureloader = new TextureLoader();
+        var ptextureloader = new THREE.TextureLoader();
         var ptexture = ptextureloader.load("texture/koudaimap.png");
-        var pmat = new MeshPhongMaterial();
+        var pmat = new THREE.MeshPhongMaterial();
         pmat.map = ptexture;
 
         var planeGeometry2 = new THREE.PlaneGeometry(7,6,10,10); //縦、横、分割数、分割数
