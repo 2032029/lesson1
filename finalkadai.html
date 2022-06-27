@@ -70,7 +70,7 @@
         var pmat = new THREE.MeshPhongMaterial();
         pmat.map = ptexture;
 
-        var planeGeometry2 = new THREE.PlaneGeometry(10.5,9,10,10); //縦、横、分割数、分割数
+        var planeGeometry2 = new THREE.PlaneGeometry(10.01,8.58,10,10); //縦、横、分割数、分割数
        // var planeMaterial2 = new THREE.MeshStandardMaterial({color: 0x606060,roughness: 1});
         var plane2 = new THREE.Mesh(planeGeometry2,pmat);
         plane2.receiveShadow = true;
@@ -129,7 +129,7 @@
         ichigoukan.add(box2);
         ichigoukan.add(sprite1);
         ichigoukan.rotation.set(0,Math.PI/2-0.15,0)
-        ichigoukan.position.set(-2,0,2);
+        ichigoukan.position.set(-1.9,0,2);
         scene.add(ichigoukan);
 
 
