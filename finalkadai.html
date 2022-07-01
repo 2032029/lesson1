@@ -35,7 +35,7 @@
 
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight1.position.set(1000, 1000, 0);
+        directionalLight1.position.set(10, 10, 0);
         directionalLight1.castShadow = true;
         // シーンに追加
         scene.add(directionalLight1);
@@ -60,6 +60,9 @@
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
+        
+        const cameraHelper = new THREE.CameraHelper(directionalLight1.shadow.camera);
+        scene.add(cameraHelper);
 
         var planeGeometry = new THREE.PlaneGeometry(100,100,10,10); //縦、横、分割数、分割数
         var planeMaterial = new THREE.MeshStandardMaterial({color: 0x808080,roughness: 0.0});
