@@ -151,6 +151,14 @@
         box3.receiveShadow = true;
         box3.position.set(0,0.75,0);
         scene.add(box3);
+        
+        
+        
+        const tsudanuma = new THREE.Group();
+        tsudanuma.add(ichigoukan);
+        tsudanuma.add(plane2);
+        tsudanuma.add(box3);
+        scene.add(tsudanuma);
 
 
 
@@ -179,6 +187,7 @@
           sprite1.position.y = Math.sin(x)/10 + 3.5;
 
         //  ichigoukan.rotation.y += 0.005;
+          tsudanuma.rotation.y += 0.005;
 
         }
       }
