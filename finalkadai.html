@@ -146,18 +146,19 @@
 
         var bgeometry3 = new THREE.BoxGeometry(0.9,1.5,0.8);
        // var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
-        var box3 = new THREE.Mesh(bgeometry3, material3);
-        box3.castShadow = true;
-        box3.receiveShadow = true;
-        box3.position.set(0,0.75,0);
-        scene.add(box3);
+        var nanagoukan = new THREE.Mesh(bgeometry3, material3);
+        nanagoukan.castShadow = true;
+        nanagoukan.receiveShadow = true;
+        nanagoukan.position.set(0,0.75,0);
+        nanagoukan.rotation.set(0,Math.PI/2-0.1,0);
+        scene.add(nanagoukan);
         
         
         
         const tsudanuma = new THREE.Group();
         tsudanuma.add(ichigoukan);
         tsudanuma.add(plane2);
-        tsudanuma.add(box3);
+        tsudanuma.add(nanagoukan);
         scene.add(tsudanuma);
 
 
