@@ -127,10 +127,29 @@
         const ichigoukan = new THREE.Group();
         ichigoukan.add(box1);
         ichigoukan.add(box2);
-        ichigoukan.add(sprite1);
-        ichigoukan.rotation.set(0,Math.PI/2-0.15,0)
-        ichigoukan.position.set(-1.7,0,2);
+        ichigoukan.castShadow = true;
+        ichigoukan.receiveShadow = true;
+        ichigoukan.position.set(0,0,0);
         scene.add(ichigoukan);
+
+
+        var materials3 = [
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-leftpng")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-right.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-top.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-top.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-front.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-back.png")}),
+        ];
+        var material3 = new THREE.MeshFaceMaterial(materials3);
+
+        var bgeometry3 = new THREE.BoxGeometry(1,1.5,0.9);
+       // var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var box3 = new THREE.Mesh(bgeometry3, material3);
+        box3.castShadow = true;
+        box3.receiveShadow = true;
+        box3.position.set(0,0.75,0);
+        scene.add(box3);
 
 
 
