@@ -40,17 +40,17 @@
         // シーンに追加
         scene.add(directionalLight1);
         
-        var directionalLight3 = new THREE.DirectionalLight(0xffffff, 2);
+        var directionalLight3 = new THREE.DirectionalLight(0xffffff, 0.1);
         directionalLight1.position.set(-1000, 1000, 0);
         directionalLight1.castShadow = true;
         scene.add(directionalLight3);
         
-        var directionalLight4 = new THREE.DirectionalLight(0xffffff, 2);
+        var directionalLight4 = new THREE.DirectionalLight(0xffffff, 0.1);
         directionalLight1.position.set(0, 1000, 1000);
         directionalLight1.castShadow = true;
         scene.add(directionalLight4);
         
-        var directionalLight5 = new THREE.DirectionalLight(0xffffff, 2);
+        var directionalLight5 = new THREE.DirectionalLight(0xffffff, 0.1);
         directionalLight1.position.set(0, 1000, -1000);
         directionalLight1.castShadow = true;
         scene.add(directionalLight5);
