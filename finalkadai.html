@@ -129,7 +129,7 @@
         ichigoukan.add(box2);
         ichigoukan.castShadow = true;
         ichigoukan.receiveShadow = true;
-        ichigoukan.rotation.set(0,0,Math.PI/2-0.2);
+        ichigoukan.rotation.set(0,Math.PI/2-0.1,0);
         ichigoukan.position.set(-1.7,0,2);
         scene.add(ichigoukan);
 
@@ -154,63 +154,6 @@
 
 
 
-
-/*        var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("stone.jpg");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
-
-        var bump = textureLoader.load("stone-bump.jpg");
-        mat.bumpMap = bump;
-        mat.bumpscale = 0.2;*/
-
-        // 箱を作成
-/*       var geometry = new THREE.BoxGeometry(1, 1, 1);
-        var material = new THREE.MeshStandardMaterial({ color: 0x0000ff,roughness: 0.0 });
-        var box = new THREE.Mesh(geometry, mat);
-        //var box = new THREE.Mesh(geometry, material);
-        box.castShadow = true;
-        box.receiveShadow = true;
-        box.position.set(0,0,0); //位置を指定
-//        scene.add(box);   // シーンに追加
-
-        var ttextureLoader = new THREE.TextureLoader();
-        var ttexture = ttextureLoader.load("wood.jpg");
-        var tmat = new THREE.MeshPhongMaterial();
-        tmat.map = ttexture;
-
-        var tgeometry = new THREE.TorusGeometry( 0.9, 0.1, 10, 100 );
-        var tmaterial = new THREE.MeshStandardMaterial( { color: 0xFF0000, roughness: 0.0 } );
-        //var torus = new THREE.Mesh( tgeometry, tmaterial );
-        var torus = new THREE.Mesh( tgeometry, tmat );
-        torus.castShadow = true;
-        torus.receiveShadow = true;
-        torus.position.set(0,0,0);
-//        scene.add( torus );
-
-        var tgeometry2 = new THREE.TorusGeometry( 1, 0.1, 10, 100 );
-        var tmaterial2 = new THREE.MeshStandardMaterial( { color: 0x00ff00,roughness: 0.0 } );
-        //var torus2 = new THREE.Mesh( tgeometry2, tmaterial2 );
-        var torus2 = new THREE.Mesh( tgeometry2, tmat );
-        torus2.castShadow = true;
-        torus2.receiveShadow = true;
-        torus2.position.set(0,0,0);
- //       scene.add( torus2 );
-
-        const test = new THREE.Group();
-        test.add(box);
-        test.add(torus);
-        test.add(torus2);
-        test.position.set(0,1.2,1);
- //       scene.add(test);
-
-        const all = new THREE.Group();
-        all.add(plane);
-        all.add(test);
-        all.position.set(0,0,0);
-        scene.add(all);
-
-*/
 
         update();
 
