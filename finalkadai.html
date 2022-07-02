@@ -299,6 +299,12 @@
         //  test.position.y = Math.sin(x) / 2 + 1.7;
           sprite1.position.y = Math.sin(x)/10 + 3.5;
           directionalLight1.position.set(Math.cos(t)*10, Math.sin(t)*10, 0);
+          
+          if(t > 180){
+              directionalLight1.castShadow = false;
+          }else{
+              directionalLight1.castShadow = true;
+          }
 
         //  ichigoukan.rotation.y += 0.005;
         //  tsudanuma.rotation.y += 0.005;
