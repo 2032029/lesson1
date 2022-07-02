@@ -164,10 +164,14 @@
       //  scene.add(nanagoukan);
         
         
+        var texture5top = new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")});
+        texture5top.center.set(.5, .5);
+        texture5top.rotation = THREE.MathUtils.degToRad(45);
         var materials4 = [
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-left.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-right.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-left.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-right.png")}),
+           // new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
+            texture5top,
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-front.png")}),
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-back.png")}),
@@ -178,7 +182,7 @@
      //   var bmaterial4 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var gogoukan1 = new THREE.Mesh(bgeometry4, material4);
         var bgeometry5 = new THREE.BoxGeometry(0.13,0.13,0.13);
-        var bmaterial5 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var bmaterial5 = new THREE.MeshStandardMaterial({color: 0xbbbbff, roughness: 1.0});
         var gogoukan2 = new THREE.Mesh(bgeometry5, bmaterial5);
         gogoukan1.castShadow = true;
         gogoukan1.receiveShadow = true;
