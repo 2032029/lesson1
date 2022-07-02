@@ -199,22 +199,22 @@
      //   scene.add(gogoukan);
         
         var materials5 = [
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highback.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highfront.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-hightop.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-hightop.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highright.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highleft.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highback.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highfront.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-hightop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-hightop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highright.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-highleft.png")}),
         ];
         var material5 = new THREE.MeshFaceMaterial(materials5);
 
         var materials6 = [
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowback.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowfront.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowtop.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowtop.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowside.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowsdie.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowback.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowfront.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowtop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowtop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowside.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/2-lowsdie.png")}),
         ]
         var material6 = new THREE.MeshFaceMaterial(materials6);
 
@@ -240,6 +240,24 @@
         scene.add(nigoukan);
         
         
+        var materials7 = [
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-back.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-front.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-right.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/6-left.png")}),
+        ];
+        var material7 = new THREE.MeshFaceMaterial(materials7);
+
+        var bgeometry8 = new THREE.BoxGeometry(1.1,0.7,0.7);
+        var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var rokugoukan = new THREE.Mesh(bgeometry8, material7);
+        rokugoukan.castShadow = true;
+        rokugoukan.receiveShadow = true;
+        rokugoukan.position.set(0,0.35,0);
+       // rokugoukan.rotation.set(0,Math.PI/2-0.1,0);
+        scene.add(rokugoukan);
 
 
 
