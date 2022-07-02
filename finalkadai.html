@@ -293,14 +293,14 @@
 
           x+=0.03;
           t += 0.005;
-          if(t > 360){
+          if(t > Math.PI*2){
               t = 0;
           }
         //  test.position.y = Math.sin(x) / 2 + 1.7;
           sprite1.position.y = Math.sin(x)/10 + 3.5;
           directionalLight1.position.set(Math.cos(t)*10, Math.sin(t)*10, 0);
           
-          if(t > 180){
+          if(t > Math.PI){
               directionalLight1.castShadow = false;
           }else{
               directionalLight1.castShadow = true;
