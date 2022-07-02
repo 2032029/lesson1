@@ -80,6 +80,7 @@
         var planeGeometry2 = new THREE.PlaneGeometry(9.87,8.46,10,10); //縦、横、分割数、分割数
        // var planeMaterial2 = new THREE.MeshStandardMaterial({color: 0x606060,roughness: 1});
         var plane2 = new THREE.Mesh(planeGeometry2,pmat);
+        plane2.castShadow = true;
         plane2.receiveShadow = true;
         plane2.rotation.set( -Math.PI/2, 0, 0 );
         plane2.position.set(0,0.01,0);
