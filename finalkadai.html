@@ -301,9 +301,9 @@
           directionalLight1.position.set(Math.cos(t)*10, Math.sin(t)*10, 0);
           
           if(t > Math.PI){
-              directionalLight1.castShadow = false;
+              scene.remove(directionalLight1);
           }else{
-              directionalLight1.castShadow = true;
+              scene.add(directionalLight1);
           }
 
         //  ichigoukan.rotation.y += 0.005;
