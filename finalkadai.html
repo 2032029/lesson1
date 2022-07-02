@@ -163,19 +163,14 @@
         nanagoukan.rotation.set(0,Math.PI/2-0.1,0);
       //  scene.add(nanagoukan);
         
-        var btextureLoader1 = new THREE.TextureLoader();
-        var btopmap = btextureLoader1.load("texture/5-top.png");
-        var texture5top = new THREE.MeshLambertMaterial({map:btopmap,});
-      //  texture5top.center.set(.5, .5);
-        texture5top.rotation = THREE.MathUtils.degToRad(180);
+       
         var materials4 = [
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-left.png")}),
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-right.png")}),
-           // new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
-            texture5top,
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-left.png")}),
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
-            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-front.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
             new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-back.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-front.png")}),
         ];
         var material4 = new THREE.MeshFaceMaterial(materials4);
 
@@ -190,7 +185,7 @@
         gogoukan2.castShadow = true;
         gogoukan2.receiveShadow = true;
         gogoukan1.position.set(0,0.55,0);
-        gogoukan2.position.set(-0.07,1.165,0.21);
+        gogoukan2.position.set(0.07,1.165,-0.21);
 
         const gogoukan = new THREE.Group();
         gogoukan.add(gogoukan1);
