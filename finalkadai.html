@@ -141,7 +141,7 @@
         ichigoukan.receiveShadow = true;
         ichigoukan.rotation.set(0,Math.PI/2-0.1,0);
         ichigoukan.position.set(-1.5,0,1.9);
-        scene.add(ichigoukan);
+    //    scene.add(ichigoukan);
 
 
         var materials3 = [
@@ -161,7 +161,38 @@
         nanagoukan.receiveShadow = true;
         nanagoukan.position.set(-0.7,0.75,-0.6);
         nanagoukan.rotation.set(0,Math.PI/2-0.1,0);
-        scene.add(nanagoukan);
+      //  scene.add(nanagoukan);
+        
+        
+        var materials4 = [
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-left.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/7-right.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-top.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-front.png")}),
+            new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("texture/5-back.png")}),
+        ];
+        var material4 = new THREE.MeshFaceMaterial(materials4);
+
+        var bgeometry4 = new THREE.BoxGeometry(0.3,1.1,0.6);
+     //   var bmaterial4 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var gogoukan1 = new THREE.Mesh(bgeometry4, material4);
+        var bgeometry5 = new THREE.BoxGeometry(0.13,0.13,0.13);
+        var bmaterial5 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var gogoukan2 = new THREE.Mesh(bgeometry5, bmaterial5);
+        gogoukan1.castShadow = true;
+        gogoukan1.receiveShadow = true;
+        gogoukan2.castShadow = true;
+        gogoukan2.receiveShadow = true;
+        gogoukan1.position.set(0,0.55,0);
+        gogoukan2.position.set(-0.07,1.165,0.21);
+
+        const gogoukan = new THREE.Group();
+        gogoukan.add(gogoukan1);
+        gogoukan.add(gogoukan2);
+        gogoukan.rotation.set(0,Math.PI/2,0);
+        gogoukan.position.set(-3,0,1.9);
+     //   scene.add(gogoukan);
 
 
 
@@ -169,6 +200,7 @@
         tsudanuma.add(ichigoukan);
         tsudanuma.add(plane2);
         tsudanuma.add(nanagoukan);
+        tsudanuma.add(gogoukan);
         scene.add(tsudanuma);
 
 
