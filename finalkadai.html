@@ -267,6 +267,27 @@
         rokugoukan.position.set(0,0.35,2.1);
         rokugoukan.rotation.set(0,Math.PI/2-0.1,0);
         scene.add(rokugoukan);
+        
+        
+        var materials8 = [
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-back.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-front.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-right.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/3-left.png")}),
+        ];
+        var material8 = new THREE.MeshFaceMaterial(materials8);
+
+        var bgeometry9 = new THREE.BoxGeometry(1.0,0.45,0.6);
+     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var sangoukan = new THREE.Mesh(bgeometry9, material3);
+        sangoukan.castShadow = true;
+        sangoukan.receiveShadow = true;
+        sangoukan.position.set(0,0.225,0);
+        sangoukan.rotation.set(0,Math.PI/2-0.1,0);
+        scene.add(sangoukan);
+        
 
 
 
