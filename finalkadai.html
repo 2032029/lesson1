@@ -32,6 +32,9 @@
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body);
+        
+        //フォグの追加
+        scene.fog = new THREE.Fog(0xffffff, 10, 60);
 
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
