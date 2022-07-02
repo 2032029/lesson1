@@ -315,8 +315,10 @@
             if(t < Math.PI * 9/8){
                 renderer.setClearColor(0xaa5050);
             }else if(t > Math.PI * 11/6){
+                scene.add(directionalLight1);
                 renderer.setClearColor(0x63799a);
             }else{
+                scene.remove(directionalLight1);
                 renderer.setClearColor(0x101f2f);
             }
             
