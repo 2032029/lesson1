@@ -259,12 +259,12 @@
         ];
         var material7 = new THREE.MeshFaceMaterial(materials7);
 
-        var bgeometry8 = new THREE.BoxGeometry(1.1,0.7,0.7);
+        var bgeometry8 = new THREE.BoxGeometry(1.2,0.7,0.7);
         var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var rokugoukan = new THREE.Mesh(bgeometry8, material7);
         rokugoukan.castShadow = true;
         rokugoukan.receiveShadow = true;
-        rokugoukan.position.set(0,0.35,2.3);
+        rokugoukan.position.set(0,0.35,2.2);
         rokugoukan.rotation.set(0,Math.PI/2-0.1,0);
         scene.add(rokugoukan);
         
