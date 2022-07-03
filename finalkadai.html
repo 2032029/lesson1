@@ -279,12 +279,12 @@
         ];
         var material8 = new THREE.MeshFaceMaterial(materials8);
 
-        var bgeometry9 = new THREE.BoxGeometry(1.0,0.45,0.6);
+        var bgeometry9 = new THREE.BoxGeometry(1.2,0.45,0.6);
      //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var sangoukan = new THREE.Mesh(bgeometry9, material8);
         sangoukan.castShadow = true;
         sangoukan.receiveShadow = true;
-        sangoukan.position.set(0.3,0.225,-0.7);
+        sangoukan.position.set(0.3,0.225,-0.6);
         sangoukan.rotation.set(0,Math.PI/2-0.1,0);
         scene.add(sangoukan);
         
