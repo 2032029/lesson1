@@ -315,7 +315,6 @@
         yongoukan1.castShadow = true;
         yongoukan1.receiveShadow = true;
         yongoukan1.position.set(0,0.5,0);
-     //   yongoukan.rotation.set(0,Math.PI/2-0.1,0);
 
         var bgeometry11 = new THREE.BoxGeometry(0.14,0.22,0.23);
         var yongoukan2 = new THREE.Mesh(bgeometry11, material10);
@@ -326,6 +325,7 @@
         const yongoukan = new THREE.Group();
         yongoukan.add(yongoukan1);
         yongoukan.add(yongoukan2);
+        yongoukan.rotation.set(0,Math.PI/2-0.1,0);
         scene.add(yongoukan);
         
 
