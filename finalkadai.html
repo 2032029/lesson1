@@ -288,6 +288,46 @@
         sangoukan.rotation.set(0,Math.PI/2-0.1,0);
         scene.add(sangoukan);
         
+        
+        var materials9 = [
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-back.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-front.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-right.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-left.png")}),
+        ];
+        var material9 = new THREE.MeshFaceMaterial(materials9);
+
+        var materials10 = [
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-miniside.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-miniside.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-minitop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-minitop.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-miniside.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/4-minifront.png")}),
+        ];
+        var material10 = new THREE.MeshFaceMaterial(materials10);
+
+        var bgeometry10 = new THREE.BoxGeometry(1.3,1,0.45);
+     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var yongoukan1 = new THREE.Mesh(bgeometry10, material9);
+        yongoukan1.castShadow = true;
+        yongoukan1.receiveShadow = true;
+        yongoukan1.position.set(0,0.5,0);
+     //   yongoukan.rotation.set(0,Math.PI/2-0.1,0);
+
+        var bgeometry11 = new THREE.BoxGeometry(0.15,0.22,0.24);
+        var yongoukan2 = new THREE.Mesh(bgeometry11, material10);
+        yongoukan2.castShadow = true;
+        yongoukan2.receiveShadow = true;
+        yongoukan2.position.set(0,1.11,0);
+
+        const yongoukan = new THREE.Group();
+        yongoukan.add(yongoukan1);
+        yongoukan.add(yongoukan2);
+        scene.add(yongoukan);
+        
 
 
 
