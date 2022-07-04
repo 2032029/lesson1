@@ -377,10 +377,19 @@
         yongoukan2.castShadow = true;
         yongoukan2.receiveShadow = true;
         yongoukan2.position.set(-0.15,1.11,-0.1);
+        
+        var textureLoader4 = new THREE.TextureLoader();
+        var text4 = textureLoader4.load("texture/textyongoukan.png");
+        const spmat4 = new THREE.SpriteMaterial({map:text4,});
+
+        const sprite4 = new THREE.Sprite(spmat4);
+        sprite4.scale.set(0.8, 0.5, 1);
+        sprite4.position.set(0, 1.5, 0);
 
         const yongoukan = new THREE.Group();
         yongoukan.add(yongoukan1);
         yongoukan.add(yongoukan2);
+        yongoukan.add(sprite4);
         yongoukan.rotation.set(0,Math.PI/2-0.1,0);
         yongoukan.position.set(1.1,0,0.55);
         scene.add(yongoukan);
