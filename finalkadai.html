@@ -262,10 +262,20 @@
         box7.receiveShadow = true;
         box7.position.set(0, 0.35, 0.7);
      //   scene.add(box7);
+        
+        var textureLoader2 = new THREE.TextureLoader();
+        var text2 = textureLoader2.load("texture/textnigoukan.png");
+        const spmat2 = new THREE.SpriteMaterial({map:text2,});
+
+        const sprite2 = new THREE.Sprite(spmat2);
+        sprite2.scale.set(0.8, 0.5, 1);
+        sprite2.position.set(0, 3.5, 0);
+        
 
         const nigoukan = new THREE.Group();
         nigoukan.add(box6);
         nigoukan.add(box7);
+        nigoukan.add(sprite2);
         nigoukan.rotation.set(0,Math.PI/2-0.1,0);
         nigoukan.position.set(1.2,0,2.3);
         scene.add(nigoukan);
