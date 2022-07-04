@@ -175,17 +175,17 @@
         nanagoukan1.receiveShadow = true;
         nanagoukan1.position.set(0,0,0);
         
-        var textureLoader2 = new THREE.TextureLoader();
-        var text2 = textureLoader2.load("texture/textnigoukan.png");
-        const spmat2 = new THREE.SpriteMaterial({map:text2,});
+        var textureLoader7 = new THREE.TextureLoader();
+        var text7 = textureLoader2.load("texture/textnanagoukan.png");
+        const spmat7 = new THREE.SpriteMaterial({map:text7,});
 
-        const sprite2 = new THREE.Sprite(spmat2);
-        sprite2.scale.set(0.8, 0.5, 1);
-        sprite2.position.set(0, 5, 0);
+        const sprite7 = new THREE.Sprite(spmat7);
+        sprite7.scale.set(0.8, 0.5, 1);
+        sprite7.position.set(0, 2, 0);
 
         const nanagoukan = new THREE.Group();
         nanagoukan.add(nanagoukan1);
-        nanagoukan.add(sprite2);
+        nanagoukan.add(sprite7);
         nanagoukan.position.set(-0.7,0.75,-0.6);
         nanagoukan.rotation.set(0,Math.PI/2-0.1,0);
       //  scene.add(nanagoukan);
@@ -219,7 +219,7 @@
 
         const sprite5 = new THREE.Sprite(spmat5);
         sprite5.scale.set(0.8, 0.5, 1);
-        sprite5.position.set(0, 2, 0);
+        sprite5.position.set(0, 1.7, 0);
 
         const gogoukan = new THREE.Group();
         gogoukan.add(gogoukan1);
