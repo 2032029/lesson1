@@ -406,11 +406,24 @@
         var material11 = new THREE.MeshFaceMaterial(materials11);
 
         var bgeometry12 = new THREE.BoxGeometry(0.55,1.2,0.45);
-        var hachigoukan = new THREE.Mesh(bgeometry12, material11);
-        hachigoukan.castShadow = true;
-        hachigoukan.receiveShadow = true;
-        hachigoukan.rotation.set(0,Math.PI/2,0);
-        hachigoukan.position.set(2.9,0.6,2.87);
+        var hachigoukan1 = new THREE.Mesh(bgeometry12, material11);
+        hachigoukan1.castShadow = true;
+        hachigoukan1.receiveShadow = true;
+        hachigoukan1.rotation.set(0,Math.PI/2,0);
+        hachigoukan1.position.set(0,0.6,0);
+        
+        var textureLoader8 = new THREE.TextureLoader();
+        var text8 = textureLoader8.load("texture/texthachigoukan.png");
+        const spmat8 = new THREE.SpriteMaterial({map:text8,});
+
+        const sprite8 = new THREE.Sprite(spmat8);
+        sprite8.scale.set(0.8, 0.5, 1);
+        sprite8.position.set(0, 1.7, 0);
+
+        const hachigoukan = new THREE.Group();
+        hachigoukan.add(hachigoukan1);
+        hachigoukan.add(sprite8);
+        hachigoukan.position.set(2.9,0,2.87);
         scene.add(hachigoukan);
         
         
