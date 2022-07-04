@@ -13,10 +13,14 @@
         // サイズを指定
         const width = 800
         const height = 600;
+        
+        const canvasElement = document.querySelector('#myCanvas');
 
         // レンダラーを作成
-        var renderer = new THREE.WebGLRenderer();
-        document.body.appendChild(renderer.domElement);
+        var renderer = new THREE.WebGLRenderer({
+            canvas: canvasElement,
+        });
+    //    document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         renderer.shadowMap.enabled = true;
         renderer.setClearColor(0x90b0e0);
@@ -27,11 +31,13 @@
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
+        
         // カメラの初期座標を設定
         camera.position.set(7, 10, -3);
 
         // カメラコントローラーを作成
-        const controls = new THREE.OrbitControls(camera, document.body);
+     //   const controls = new THREE.OrbitControls(camera, document.body);
+        const controls = new THREE.OrbitControls(camera, canvasElement);
         
         //フォグの追加
         scene.fog = new THREE.Fog(0xffffff, 10, 60);
@@ -403,6 +409,7 @@
         }
       }
     </script>
+  <canvas id="myCanvas"></canvas>
   <a href="./index.html">戻る</a>
   <br>
 </body>
