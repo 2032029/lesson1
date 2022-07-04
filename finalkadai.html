@@ -293,11 +293,24 @@
 
         var bgeometry8 = new THREE.BoxGeometry(1.2,0.7,0.7);
         var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
-        var rokugoukan = new THREE.Mesh(bgeometry8, material7);
-        rokugoukan.castShadow = true;
-        rokugoukan.receiveShadow = true;
-        rokugoukan.position.set(0,0.35,2.2);
-        rokugoukan.rotation.set(0,Math.PI/2-0.1,0);
+        var rokugoukan1 = new THREE.Mesh(bgeometry8, material7);
+        rokugoukan1.castShadow = true;
+        rokugoukan1.receiveShadow = true;
+        rokugoukan1.position.set(0,0.35,0);
+        rokugoukan1.rotation.set(0,Math.PI/2-0.1,0);
+
+        var textureLoader6 = new THREE.TextureLoader();
+        var text6 = textureLoader6.load("texture/textrokugoukan.png");
+        const spmat6 = new THREE.SpriteMaterial({map:text6,});
+
+        const sprite6 = new THREE.Sprite(spmat6);
+        sprite6.scale.set(0.8, 0.5, 1);
+        sprite6.position.set(0, 2, 0);
+
+        const rokugoukan = new THREE.Group();
+        rokugoukan.add(rokugoukan1);
+        rokugoukan.add(sprite6);
+        rokugoukan.position.set(0,0,2.3);
         scene.add(rokugoukan);
         
         
