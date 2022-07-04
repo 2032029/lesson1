@@ -335,6 +335,27 @@
         yongoukan.position.set(1.1,0,0.55);
         scene.add(yongoukan);
         
+        
+        var materials11 = [
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-back.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-front.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-top.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-right.png")}),
+            new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/8-left.png")}),
+        ];
+        var material11 = new THREE.MeshFaceMaterial(materials11);
+
+        var bgeometry12 = new THREE.BoxGeometry(0.55,1.2,0.45);
+     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
+        var hachigoukan = new THREE.Mesh(bgeometry12, bmaterial3);
+        hachigoukan.castShadow = true;
+        hachigoukan.receiveShadow = true;
+        hachigoukan.position.set(0,0.6,0);
+      //  hachigoukan.rotation.set(0,Math.PI/2,0);
+        scene.add(hachigoukan);
+        
+        
 
 
 
