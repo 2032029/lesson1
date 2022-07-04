@@ -66,14 +66,14 @@
 
         // helper
         const gridHelper = new THREE.GridHelper(2,10); // size, step
-        scene.add(gridHelper);
+//        scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
-        scene.add(axisHelper);
+//        scene.add(axisHelper);
         
         const cameraHelper = new THREE.CameraHelper(directionalLight1.shadow.camera);
-        scene.add(cameraHelper);
+//        scene.add(cameraHelper);
         
-        //太陽位置確認
+        //太陽
         var sphereGeometry = new THREE.SphereGeometry(30, 320, 32);
         var sphereMaterial = new THREE.MeshStandardMaterial({color : 0xff0000});
         var sun = new THREE.Mesh(sphereGeometry, sphereMaterial);
