@@ -170,11 +170,23 @@
         var material3 = new THREE.MeshFaceMaterial(materials3);
 
         var bgeometry3 = new THREE.BoxGeometry(0.9,1.5,0.8);
-        var nanagoukan = new THREE.Mesh(bgeometry3, material3);
-        nanagoukan.castShadow = true;
-        nanagoukan.receiveShadow = true;
-        nanagoukan.position.set(-0.7,0.75,-0.6);
-        nanagoukan.rotation.set(0,Math.PI/2-0.1,0);
+        var nanagoukan1 = new THREE.Mesh(bgeometry3, material3);
+        nanagoukan1.castShadow = true;
+        nanagoukan1.receiveShadow = true;
+        nanagoukan1.position.set(-0.7,0.75,-0.6);
+        nanagoukan1.rotation.set(0,Math.PI/2-0.1,0);
+        
+        var textureLoader2 = new THREE.TextureLoader();
+        var text2 = textureLoader2.load("texture/textnigoukan.png");
+        const spmat2 = new THREE.SpriteMaterial({map:text2,});
+
+        const sprite2 = new THREE.Sprite(spmat2);
+        sprite2.scale.set(0.8, 0.5, 1);
+        sprite2.position.set(0, 5, 0);
+
+        const nanagoukan = new THREE.Group();
+        nanagoukan.add(nanagoukan1);
+        nanagoukan.add(sprite2);
       //  scene.add(nanagoukan);
         
        
@@ -199,6 +211,14 @@
         gogoukan2.receiveShadow = true;
         gogoukan1.position.set(0,0.55,0);
         gogoukan2.position.set(0.07,1.165,-0.21);
+        
+        var textureLoader5 = new THREE.TextureLoader();
+        var text5 = textureLoader5.load("texture/textgogoukan.png");
+        const spmat5 = new THREE.SpriteMaterial({map:text5,});
+
+        const sprite5 = new THREE.Sprite(spmat5);
+        sprite5.scale.set(0.8, 0.5, 1);
+        sprite5.position.set(0, 2, 0);
 
         const gogoukan = new THREE.Group();
         gogoukan.add(gogoukan1);
