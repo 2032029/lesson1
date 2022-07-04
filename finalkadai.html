@@ -328,7 +328,7 @@
         var sangoukan1 = new THREE.Mesh(bgeometry9, material8);
         sangoukan1.castShadow = true;
         sangoukan1.receiveShadow = true;
-        sangoukan1.position.set(0.3,0.225,-0.6);
+        sangoukan1.position.set(0,0.225,0);
         sangoukan1.rotation.set(0,Math.PI/2-0.1,0);
         
         var textureLoader3 = new THREE.TextureLoader();
@@ -342,6 +342,7 @@
         const sangoukan = new THREE.Group();
         sangoukan.add(sangoukan1);
         sangoukan.add(sprite3);
+        sangoukan1.position.set(0.3,0,-0.6);
         scene.add(sangoukan);
         
         
