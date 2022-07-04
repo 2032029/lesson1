@@ -104,10 +104,6 @@
         plane2.position.set(0,0.01,0);
         scene.add(plane2);
 
-//        var textureLoader = new THREE.TextureLoader();
-//        var side1 = textureLoader.load("texture/side1-all.png");
- //       var mat1 = new THREE.MeshPhongMaterial();
- //       mat1.map = side1;
 
         var materials1 = [
             new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("texture/side2-all.png")}),
@@ -174,7 +170,6 @@
         var material3 = new THREE.MeshFaceMaterial(materials3);
 
         var bgeometry3 = new THREE.BoxGeometry(0.9,1.5,0.8);
-       // var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var nanagoukan = new THREE.Mesh(bgeometry3, material3);
         nanagoukan.castShadow = true;
         nanagoukan.receiveShadow = true;
@@ -194,7 +189,6 @@
         var material4 = new THREE.MeshFaceMaterial(materials4);
 
         var bgeometry4 = new THREE.BoxGeometry(0.3,1.1,0.6);
-     //   var bmaterial4 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var gogoukan1 = new THREE.Mesh(bgeometry4, material4);
         var bgeometry5 = new THREE.BoxGeometry(0.13,0.13,0.13);
         var bmaterial5 = new THREE.MeshStandardMaterial({color: 0xbbbbff, roughness: 1.0});
@@ -286,7 +280,6 @@
         var material8 = new THREE.MeshFaceMaterial(materials8);
 
         var bgeometry9 = new THREE.BoxGeometry(1.2,0.45,0.6);
-     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var sangoukan = new THREE.Mesh(bgeometry9, material8);
         sangoukan.castShadow = true;
         sangoukan.receiveShadow = true;
@@ -316,7 +309,6 @@
         var material10 = new THREE.MeshFaceMaterial(materials10);
 
         var bgeometry10 = new THREE.BoxGeometry(1.3,1,0.45);
-     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
         var yongoukan1 = new THREE.Mesh(bgeometry10, material9);
         yongoukan1.castShadow = true;
         yongoukan1.receiveShadow = true;
@@ -347,8 +339,7 @@
         var material11 = new THREE.MeshFaceMaterial(materials11);
 
         var bgeometry12 = new THREE.BoxGeometry(0.55,1.2,0.45);
-     //   var bmaterial3 = new THREE.MeshStandardMaterial({color: 0xffffff, roughness: 0.0});
-        var hachigoukan = new THREE.Mesh(bgeometry12, bmaterial3);
+        var hachigoukan = new THREE.Mesh(bgeometry12, material11);
         hachigoukan.castShadow = true;
         hachigoukan.receiveShadow = true;
         hachigoukan.position.set(0,0.6,0);
@@ -381,20 +372,12 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-           // 箱を回転させる
-        //  box.rotation.x += 0.01;
-       //   box.rotation.y += 0.01;
-
-        //  torus.rotation.x += 0.01;
-
-        //  test.rotation.y += 0.005;
-
           x+=0.03;
           t += 0.005;
           if(t > Math.PI*2){
               t = 0;
           }
-        //  test.position.y = Math.sin(x) / 2 + 1.7;
+          
           sprite1.position.y = Math.sin(x)/10 + 3.5;
           directionalLight1.position.set(Math.cos(t)*250, Math.sin(t)*250, 0);
           sun.position.set(Math.cos(t)*1300, Math.sin(t)*1300, 0);
