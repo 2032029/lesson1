@@ -135,7 +135,22 @@
         plane2.receiveShadow = true;
         plane2.rotation.set( -Math.PI/2, 0, 0 );
         plane2.position.set(0,0.01,0);
-        scene.add(plane2);
+     //   scene.add(plane2);
+        
+        var boxGeometry = new THREE.BoxGeometry(9.87, 0.1, 8.46);
+        var boxMaterial = new THREE.MeshStandardMaterial({color: 0x606060, roughness: 1});
+        var gmaterials = [
+            boxMaterial,
+            boxMaterial,
+            ptexture,
+            boxMaterial,
+            boxMaterial,
+            boxMaterial,
+        ];
+        var gMaterial = new THREE.MeshFaceMaterial(gmaterials);
+        var ground = new THREE.Mesh(boxGeometry,gMaterial);
+        ground.position.set(0,-0.1,0);
+        scene.add(ground);
 
 
         var materials1 = [
@@ -528,7 +543,8 @@
         
         const tsudanuma = new THREE.Group();
         tsudanuma.add(ichigoukan);
-        tsudanuma.add(plane2);
+  //      tsudanuma.add(plane2);
+        tsudanuma.add(ground);
         tsudanuma.add(nanagoukan);
         tsudanuma.add(gogoukan);
         tsudanuma.add(nigoukan);
