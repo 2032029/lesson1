@@ -546,6 +546,7 @@
           sun.position.set(Math.sin(t)*1000, Math.sin(t)*1250, -Math.cos(t)*1250);
           starmesh.rotation.x += 0.005;
           starmesh.rotation.z = -Math.cos(t)/2;
+          starmesh.rotation.y += 0.001;
           
           if(t > Math.PI){
             directionalLight1.castShadow = false;
