@@ -555,6 +555,15 @@
         scene.add(treesprite18);
         
         
+        var treetexture2 = textureLoader.load("texture/tree1.png");
+        const treemat2 = new THREE.SpriteMaterial({map:treetexture2,});
+        
+        const treesprite19 = new THREE.Sprite(treemat2);
+        treesprite.scale.set(0.3, 0.6, 0.3);
+        treesprite.position.set(0, 0.3, 0.695);
+        scene.add(treesprite);
+        
+        
         
         
         const tsudanuma = new THREE.Group();
