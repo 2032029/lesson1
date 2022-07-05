@@ -522,7 +522,7 @@
           if(t > Math.PI){
             directionalLight1.castShadow = false;
             scene.add(starmesh);
-            scene.fog = new THREE.Fog(0x202020, 10, 60);
+            scene.fog = new THREE.Fog(0x707070, 10, 60);
             if(t < Math.PI * 9/8){
                 renderer.setClearColor(0xaa5050);
             }else if(t > Math.PI * 11/6){
@@ -536,7 +536,7 @@
           }else{
             directionalLight1.castShadow = true;
             scene.remove(starmesh);
-            scene.fog = new THREE.Fog(0xf0f0f0, 10, 60);
+            scene.fog = new THREE.Fog(0xf9f9f9, 10, 60);
             if(t < Math.PI/4){
                 renderer.setClearColor(0x758fb6);
             }else if(t > Math.PI * 7/8){
