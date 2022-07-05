@@ -82,6 +82,36 @@
         sun.position.set(0,1100,0);
         scene.add(sun);
         
+        //星
+        const SIZE = 3000;
+        // 配置する個数
+        const LENGTH = 100;
+        // 頂点情報を格納する配列
+        const vertices = [];
+        for (let i = 0; i < LENGTH; i++) {
+           const x = SIZE * (Math.random() - 0.5);
+           const y = SIZE * (Math.random() - 0.5);
+           const z = SIZE * (Math.random() - 0.5);
+
+           vertices.push(x, y, z);
+        }
+
+        // 形状データを作成
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+        // マテリアルを作成
+        const material = new THREE.PointsMaterial({
+           // 一つ一つのサイズ
+           size: 10,
+           // 色
+           color: 0xffffff,
+        });
+
+        // 物体を作成
+        const starmesh = new THREE.Points(geometry, material);
+        scene.add(starmesh);
+        
         
 
         var planeGeometry = new THREE.PlaneGeometry(100,100,10,10); //縦、横、分割数、分割数
@@ -486,8 +516,12 @@
        //   sun.position.set(Math.cos(t)*1300, Math.sin(t)*1300, 0);
           directionalLight1.position.set(Math.sin(t)*200, Math.sin(t)*250, -Math.cos(t)*250);
           sun.position.set(Math.sin(t)*1000, Math.sin(t)*1250, -Math.cos(t)*1250);
+          starmesh.rotation.x += 0.005;
+          starmesh.rotation.z = -Math.cos(t)/2;
+          
           if(t > Math.PI){
             directionalLight1.castShadow = false;
+            scene.add(starmesh);
             scene.fog = new THREE.Fog(0x202020, 10, 60);
             if(t < Math.PI * 9/8){
                 renderer.setClearColor(0xaa5050);
@@ -501,6 +535,7 @@
             
           }else{
             directionalLight1.castShadow = true;
+            scene.remove(starmesh);
             scene.fog = new THREE.Fog(0xf0f0f0, 10, 60);
             if(t < Math.PI/4){
                 renderer.setClearColor(0x758fb6);
