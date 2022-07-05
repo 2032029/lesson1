@@ -471,7 +471,8 @@
         spritec.position.set(0, 4, 1);
         
       //tree
-        var treetexture = textureLoader.load("texture/tree0.png");
+        var ttextureLoader = new THREE.TextureLoader();
+        var treetexture = ttextureLoader.load("texture/tree0.png");
         const treemat = new THREE.SpriteMaterial({map:treetexture,});
 
         const treesprite = new THREE.Sprite(treemat);
