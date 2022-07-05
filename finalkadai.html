@@ -470,6 +470,16 @@
         spritec.scale.set(3.5, 1, 1);
         spritec.position.set(0, 4, 1);
         
+      //tree
+        var treetexture = textureLoader.load("texture/tree0.png");
+        const treemat = new THREE.SpriteMaterial({map:treetexture,});
+
+        const treesprite = new THREE.Sprite(treemat);
+        treesprite.scale.set(0.15, 0.2, 0.15);
+        treesprite.position.set(-5, 0.1, -5);
+        scene.add(treesprite);
+        
+        
         const tsudanuma = new THREE.Group();
         tsudanuma.add(ichigoukan);
         tsudanuma.add(plane2);
