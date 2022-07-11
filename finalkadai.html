@@ -149,6 +149,7 @@
         ];
         var gMaterial = new THREE.MeshFaceMaterial(gmaterials);
         var ground = new THREE.Mesh(boxGeometry,gMaterial);
+        ground.receiveShadow = true;
         ground.position.set(0,-0.047,0);
         scene.add(ground);
 
